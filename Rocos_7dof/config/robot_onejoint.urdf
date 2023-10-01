@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="sia_robot">
+    <link name="base_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 3.1415926535897932384626"/>
+            <geometry>
+                <mesh filename="package://self_robot_description/meshes/base_link.STL"/>
+            </geometry>
+            <material name="">
+                <color rgba="1 1 1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 3.1415926535897932384626"/>
+            <geometry>
+                <mesh filename="package://self_robot_description/meshes/base_link.STL"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="link_1">
+        <inertial>
+        <origin
+            xyz="0.389983 0 0"
+            rpy="0 0 0" />
+        <mass
+            value="33.01" />
+        <inertia
+            ixx="0.113"
+            ixy="0"
+            ixz="0"
+            iyy="0.114"
+            iyz="-0.002"
+            izz="0.013" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://self_robot_description/meshes/arm1.STL"/>
+            </geometry>
+            <material name="">
+                <color rgba="1 1 1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 3.1415926535897932384626"/>
+            <geometry>
+                <mesh filename="package://self_robot_description/meshes/arm1.STL"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_1" type="continuous">
+        <origin xyz="0.0 0.0 0" rpy="0 1.5707 0"/>
+        <parent link="base_link"/>
+        <child link="link_1"/>
+        <axis xyz="0 0 1"/>
+        <hardware id="0">
+            <limit lower="-2.84" upper="2.84"  vel="3.0" acc="10.0" jerk="150.0" effort="30.0"/>
+            <transform ratio="1.0" offset_pos_cnt="1535341" cnt_per_unit="156455.678" torque_per_unit="1.0"
+                       user_unit_name="rad"/>
+        </hardware>
+    </joint>
+   
+</robot>
